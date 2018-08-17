@@ -1,0 +1,182 @@
+/* pages/task/task.wxss */
+.container{
+
+}
+.everyDay-sigin{
+    border-top: 8rpx solid #f2f2f2;
+    padding: 40rpx 52rpx 45rpx 47rpx;
+}
+.everyDay-top{}
+.everyDay-left{}
+.everyDay-left-title{
+    font-size: 30rpx;
+    color: #353535;
+}
+.everyDay-left-grand{
+    font-size: 24rpx;
+    color: #b2b2b2b2;
+}
+.everyDay-right{
+    font-size: 24rpx;
+    border-radius: 15rpx;
+}
+.isSignb{
+    width: 108rpx;
+    height: 46rpx;
+    border: 1px solid #d94f44;
+    color: #d94f44;
+    background-color: #fff;
+}
+.isSigna{
+    width: 113rpx;
+    height: 50rpx;
+    background-color: #d94f44;
+    color: #fff;
+}
+.everyDay-money{}
+.everyDay-money-top{
+    margin-top: 80rpx;
+}
+.everyDay-money-item-warp{
+    flex: 1;
+}
+.everyDay-money-item{}
+.everyDay-money-item-day{
+    font-size: 20rpx;
+    color: #353535;
+}
+.everyDay-money-item-money{
+    position: relative;
+    width: 105rpx;
+    height: 105rpx;
+    border-radius: 20rpx;
+    border: 1px solid #e8e8e8;
+}
+.everyDay-money-item-money > image {
+    width: 105rpx;
+    height: 105rpx;
+    display: block;
+    border-radius: 20rpx;
+}
+.everyDay-money-item-money-shade{
+    width: 105rpx;
+    height: 105rpx;
+    border-radius: 20rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #e8e8e8;
+    background-color: rgba(242,242,242,.6);
+}
+.everyDay-money-item-money-shade > image{
+    width: 32rpx;
+    height: 32rpx;
+    display: block;
+    position: absolute;
+    bottom: -1rpx;
+    right: -1rpx;
+}
+.everyDay-money-item-award{
+    font-size: 20rpx;
+    color: #353535;
+}
+.everyDay-money-bottom{
+    padding: 40rpx 80rpx 30rpx 80rpx;
+}
+.everyDay-money-tip{
+    font-size: 20rpx;
+    color: #b2b2b2;
+}
+.everyDay-task{
+    border-top: 8rpx solid #f2f2f2;
+}
+.everyDay-task-title{
+    padding: 40rpx 50rpx;
+    font-size: 30rpx;
+    color: #353535;
+}
+.everyDay-task-item{
+    padding: 0 25rpx;
+    margin-bottom: 30rpx;
+}
+.everyDay-task-img{
+    width: 700rpx;
+    height: 205rpx;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    overflow: hidden;
+}
+.everyDay-task-img > image {
+    width: 700rpx;
+    height: 205rpx;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    display: block;
+}
+.everyDay-taskInfo{
+    padding: 8rpx 27rpx 50rpx 27rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f2f2f2;
+}
+.everyDay-taskInfo-l{}
+.everyDay-taskInfo-l-top{
+    height: 50rpx;
+    display: flex;
+    align-items: flex-start
+}
+.everyDay-taskInfo-l-icon{
+    width: 76rpx;
+    height: 76rpx;
+    position: relative;
+    margin-right: 17rpx;
+}
+.everyDay-taskInfo-l-icon > image {
+    position: absolute;
+    top: -40rpx;
+    left: 0;
+    border-radius: 50%;
+    width: 76rpx;
+    height: 76rpx;
+    border: 1px solid #ffffff;
+}
+.everyDay-taskInfo-l-title{
+    font-size: 25rpx;
+    color: #393939;
+}
+.everyDay-taskInfo-l-b{
+    font-size: 20rpx;
+    color: #b2b2b2;
+}
+.everyDay-taskInfo-r{}
+.everyDay-taskInfo-r{}
+.everyDay-taskInfo-r-top-statusa{
+    width: 113rpx;
+    height: 50rpx;
+    border-radius: 15rpx;
+    background-color: #b2b2b2;
+    font-size: 24rpx;
+    color: #ffffff;
+}
+.everyDay-taskInfo-r-top-statusb{
+    width: 113rpx;
+    height: 50rpx;
+    border-radius: 15rpx;
+    background-color: #d94f44;
+    font-size: 24rpx;
+    color: #ffffff;
+}
+.everyDay-taskInfo-r-top-statusc{
+    width: 108rpx;
+    height: 46rpx;
+    border-radius: 15rpx;
+    background-color: #ffffff;
+    font-size: 24rpx;
+    color: #d94f44;
+    border: 1px solid #d94f44;
+}
+.everyDay-taskInfo-r-b{
+    font-size: 20rpx;
+    color: #b2b2b2;
+}

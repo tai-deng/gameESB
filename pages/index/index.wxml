@@ -1,0 +1,297 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="fixationBar">
+    <view class="bannerTop">
+      <image src="../imgs/banner.png"></image>
+      <view class="bannerText row">游戏小鹿</view>
+    </view>
+    <view class="main-tab flexrow">
+      <view class="tab-warp row"data-select="1"bindtap="bindtap">
+        <view class="tab-item row {{select == 1 ? 'sca' : 'scb'}}">精选</view>
+      </view>
+      <view class="tab-warp row"data-select="2"bindtap="bindtap">
+        <view class="tab-item row {{select == 2 ? 'sca' : 'scb'}}">发现</view>
+      </view>
+      <view class="tab-warp row"data-select="3"bindtap="bindtap">
+        <view class="tab-item row {{select == 3 ? 'sca' : 'scb'}}">分类</view>
+      </view>
+      <view class="tab-warp row"data-select="4"bindtap="bindtap">
+        <view class="tab-item row {{select == 4 ? 'sca' : 'scb'}}">圈子</view>
+      </view>
+    </view>
+  </view>
+  <view class="handpick" wx:if="{{select == 1}}">
+    <view class="everDay">今天</view>
+    <view class="popularize">
+      
+      <block wx:for="{{handpicData}}"wx:key="*this">
+        
+        <navigator class="popularize-item"  target="miniProgram" app-id="{{item.appid}}" hover-class="none"wx:if="{{item.appid}}"data-gameId="{{item.gameId}}" bindtap="bindGather">
+          <view class="popularize-top">
+            <view class="official row">
+              <image src="../imgs/gftj.png"></image>
+              <view class="official-text">官方推荐</view>
+            </view>
+            <image src="{{item.gameImg}}"></image>
+          </view>
+          <view class="popularize-bottom rows">
+            <view class="popularize-bottom-left flexrow">
+              <view class="popularize-bottom-left-icon">
+                <image src="{{item.gameIcon}}"></image>
+              </view>
+              <view class="popularize-bottom-left-title">
+                {{item.title}}
+              </view>
+            </view>
+            <view class="popularize-bottom-r row">
+              马上玩
+            </view>
+          </view>
+        </navigator>
+      
+          <view class="popularize-item" data-qrCode="{{item.qrCode}}" wx:else bindtap="bindQrCode"data-gameId="{{item.gameId}}" >
+            <view class="popularize-top">
+              <view class="official row">
+                <image src="../imgs/gftj.png"></image>
+                <view class="official-text">官方推荐</view>
+              </view>
+              <image src="{{item.gameImg}}"></image>
+            </view>
+            <view class="popularize-bottom rows">
+              <view class="popularize-bottom-left flexrow">
+                <view class="popularize-bottom-left-icon">
+                  <image src="{{item.icon}}"></image>
+                </view>
+                <view class="popularize-bottom-left-title">
+                  {{item.title}}
+                </view>
+              </view>
+              <view class="popularize-bottom-r row">
+                马上玩
+              </view>
+            </view>
+          </view>
+
+      </block>
+
+    </view>
+  </view>
+  <view class="discover" wx:if="{{select == 2}}">
+    <view class="mvp">
+      <view class="discover-top rows">
+        <view class="discover-top-left flexrow">
+          <image src="../imgs/mvp.png"></image>
+          最佳游戏
+        </view>
+        <navigator url="/pages/index/moreGame?data=gameMvp" class="discover-top-right"data-label="mvp"bindtap="bindMore">查看更多</navigator>
+      </view>
+      <block wx:for="{{partMvpData}}"wx:key="{{index}}">
+        <navigator class="discover-item rows" target="miniProgram" app-id="{{item.appid}}" wx:if="{{item.appid}}" hover-class="none"data-gameId="{{item.gameId}}" bindtap="bindGather">
+          <view class="discover-item-left flexrow">
+            <view class="discover-item-left-icon">
+              <view class="discover-item-left-icon-little">
+                <image src="../imgs/one.png" wx:if="{{index == 0}}"></image>
+                <image src="../imgs/two.png" wx:if="{{index == 1}}"></image>
+                <image src="../imgs/three.png" wx:if="{{index == 2}}"></image>
+              </view>
+              <image src="{{item.gameIcon}}"></image>
+            </view>
+            <view class="discover-item-left-describe">
+              <view class="discover-item-left-top flexrow">
+                <view class="discover-item-left-title">{{item.title}}</view>
+
+                <view class="discover-item-left-play">
+                    点击即玩
+                </view>
+
+              </view>
+              <view class="discover-item-left-describe-label flexrow">
+                <view class="labels" wx:for="{{item.label}}"wx:for-item="it"wx:key="*this">
+                  {{it}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="discover-item-right">{{item.date}}</view>
+        </navigator>
+        
+        <view class="discover-item rows" data-qrCode="{{item.qrCode}}" wx:else bindtap="bindQrCode"data-gameId="{{item.gameId}}">
+            <view class="discover-item-left flexrow">
+              <view class="discover-item-left-icon">
+                <view class="discover-item-left-icon-little">
+                  <image src="../imgs/one.png" wx:if="{{index == 0}}"></image>
+                  <image src="../imgs/two.png" wx:if="{{index == 1}}"></image>
+                  <image src="../imgs/three.png" wx:if="{{index == 2}}"></image>
+                </view>
+                <image src="{{item.gameIcon}}"></image>
+              </view>
+              <view class="discover-item-left-describe">
+                <view class="discover-item-left-top flexrow">
+                  <view class="discover-item-left-title">{{item.title}}</view>
+  
+                  <view class="discover-item-left-play">
+                      点击即玩
+                  </view>
+  
+                </view>
+                <view class="discover-item-left-describe-label flexrow">
+                  <view class="labels" wx:for="{{item.label}}"wx:for-item="it"wx:key="*this">
+                    {{it}}
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="discover-item-right">{{item.date}}</view>
+          </view>
+      </block>
+    </view>
+
+    <view class="heatFight"wx:for="{{heatData}}"wx:key="*this">
+      <view class="heatFight-banner">
+        <image src="{{item.ThemeImg}}"></image>
+        <view class="heatFight-banner-title row">{{item.Theme}}</view>
+        <navigator url="/pages/index/moreGame?data={{item.ThemeID}}" class="heatFight-banner-tap row"data-label="heat"bindtap="bindMore">查看更多></navigator>
+      </view>
+      <view class="heatFights flexrow">
+
+        <block wx:for="{{item.gameList}}"wx:key="*this" >
+          <navigator class="heatFight-item row"target="miniProgram" app-id="{{item.appid}}" hover-class="none" wx:if="{{item.appid}}" bindtap="bindGather"data-gameId="{{item.gameId}}" bindtap="bindGather">
+            <image src="{{item.gameIcon}}"></image>
+          </navigator>
+          <view wx:else class="heatFight-item row" data-qrCode="{{item.qrCode}}" bindtap="bindQrCode"data-gameId="{{item.gameId}}">
+              <image src="{{item.gameIcon}}"></image>
+          </view>
+        </block>
+
+      </view>
+    </view>
+  </view>
+  <view class="classify" wx:if="{{select == 3}}">
+    <scroll-view  scroll-x>
+      <view class="classify-tab flexrow" style="width:{{scrollWidth}}rpx">
+        <view class="classify-tab-item {{index == tabIndex?'classify-tab-itema':'classify-tab-itemb'}} row" wx:for="{{classifyData}}"wx:key="*this" bindtap="bindClassifyTab" data-index="{{index}}">
+          {{item.title}}
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class="classify-item-warp">
+      <block wx:for="{{classifyDataItem}}"wx:key="*this">
+        <navigator class="classify-item rows" target="miniProgram" wx:if="{{item.appid}}" app-id="{{item.appid}}" hover-class="none"data-gameId="{{item.gameId}}" bindtap="bindGather">
+          <view class="classify-item-left flexrow">
+            <view class="classify-item-left-icon">
+              <image src="{{item.gameIcon}}"></image>
+            </view>
+            <view class="classify-item-left-details">
+              <view class="classify-item-left-details-title">
+                {{item.title}}
+              </view>
+              <view class="classify-item-left-details-describs">
+                {{item.describe}}
+              </view>
+            </view>
+          </view>
+          <view class="classify-item-right flexrow"bindtap="bindEnjoy"data-index="{{index}}">
+            <image src="../imgs/like.png"></image>
+            {{item.enjoy}}w
+          </view>
+        </navigator>
+
+        <view class="classify-item rows" data-qrCode="{{item.qrCode}}" wx:else bindtap="bindQrCode"data-gameId="{{item.gameId}}">
+          <view class="classify-item-left flexrow">
+            <view class="classify-item-left-icon">
+              <image src="{{item.gameIcon}}"></image>
+            </view>
+            <view class="classify-item-left-details">
+              <view class="classify-item-left-details-title">
+                {{item.title}}
+              </view>
+              <view class="classify-item-left-details-describs">
+                {{item.describe}}
+              </view>
+            </view>
+          </view>
+          <view class="classify-item-right flexrow"bindtap="bindEnjoy"data-index="{{index}}">
+            <image src="../imgs/like.png"></image>
+            {{item.enjoy}}w
+          </view>
+        </view>
+        
+      </block>
+    </view>
+
+  </view>
+  <view class="circle" wx:if="{{select == 4}}">
+    <view class="circle-top-title">发现用户</view>
+    <scroll-view scroll-x >
+      <view class="circle-top flexrow"style="width={{circleWidtn}}rpx">
+        <view class="circle-item" wx:for="{{circleData}}"wx:key="*this">
+          <view class="circle-item-warp">
+            <image src="{{item.userIcon}}"></image>
+          </view>
+          <view class="circle-item-attention row"bindtap="bindFindAttention"data-id="{{item.id}}">
+            <view class="isAttentiona row" wx:if="{{item.isAttention}}">
+              已关注
+            </view>
+            <view class="isAttentionb row" wx:else>
+              关注
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="circles-user">
+      <view class="circles-user-item"wx:for="{{circleUser}}"wx:key="*this">
+        <view class="circles-user-item-top rows">
+          <view class="circles-user-item-top-left flexrow">
+            <view class="circles-user-item-top-left-icon">
+              <image src="{{item.userIcon}}"></image>
+            </view>
+
+            <view class="circles-user-item-top-left-info">
+              <view class="circles-user-item-top-left-info-title">
+                {{item.name}}
+              </view>
+              <view class="circles-user-item-top-left-info-date">
+                {{item.date}}
+              </view>
+            </view>
+
+          </view>
+          <view class="circles-user-item-top-right"bindtap="bindUserAttention"data-id="{{item.id}}">
+            <view class="isAttentiona row" wx:if="{{item.isAttention}}">
+              已关注
+            </view>
+            <view class="isAttentionb row" wx:else>
+              关注
+            </view>
+          </view>
+        </view>
+        <view class="circles-user-item--publish">
+          <image mode="aspectFit" wx:if="{{item.type == 1}}" src="{{item.url}}"></image>
+          <video wx:if="{{item.type == 2}}" src="{{item.url}}"></video>
+        </view>
+        <view class="circles-user-item-buttom rows">
+          <view class="circles-user-item-buttom-play">{{item.playNum}}次播放</view>
+          <view class="circles-user-item-buttom-r flexrow">
+            <view class="circles-user-item-buttom-praise flexrow {{item.isPraise ? 'praisea':'praiseb'}}"bindtap="bindPraise"data-id="{{item.id}}">
+              <image wx:if="{{item.isPraise}}" src="../imgs/praisea.png"></image>
+              <image wx:else src="../imgs/praiseb.png"></image>
+              {{item.praiseNum}}
+            </view>
+            <view class="circles-user-item-buttom-review flexrow"bindtap="bindReview"data-id="{{item.id}}">
+              <image wx:if="{{item.isReview}}" src="../imgs/reviewa.png"></image>
+              <image wx:else src="../imgs/reviewb.png"></image>
+              {{item.reviewNum}}
+            </view>
+            <button open-type="share" class="circles-user-item-buttom-share flexrow"bindtap="bindShare"data-id="{{item.id}}">
+              <image wx:if="{{item.isShare}}" src="../imgs/sharea.png"></image>
+              <image wx:else src="../imgs/shareb.png"></image>
+              <!-- {{item.shareNum}} -->
+            </button> 
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

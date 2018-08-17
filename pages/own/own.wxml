@@ -1,0 +1,49 @@
+<!--pages/own/own.wxml-->
+<view class="container">
+    <view class="userTop-warp row">
+        <view class="userBlock row">
+            <button hover-class="none" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" class="userTop-cnt column">
+                <view class="userTop-cnt-icon">
+                    <image src="{{userInfo.avatarUrl}}"></image>
+                    <view class="sex">
+                        <image wx:if="{{userInfo.gender == 1}}" src="../imgs/man.png"></image>
+                        <image wx:else src="../imgs/woman.png"></image>
+                    </view>
+                </view>
+
+                <view class="userTop-cnt-title">{{userInfo.nickName}}</view>
+            </button>
+        </view>
+    </view>
+    <view class="mineGame">
+        <view class="mineGame-title">我的游戏</view>
+        <scroll-view scroll-x>
+            <view class="mineGameWarp flexrow">
+                <block wx:for="{{data}}"wx:key="*this">
+                    <navigator class="mineGame-item" target="miniProgram" wx:if="{{item.appid}}" app-id="{{item.appid}}" hover-class="none">
+                        <view class="mineGame-item-icon">
+                            <image src="{{item.gameIcon}}"></image>
+                        </view>
+                        <view class="mineGame-item-title">
+                            {{item.title ? item.title : "煎饼大师"}}
+                        </view>
+                    </navigator>
+                    <view class="mineGame-item"wx:else data-qrCode="{{item.qrCode}}" wx:else bindtap="bindQrCode">
+                        <view class="mineGame-item-icon">
+                            <image src="{{item.gameIcon}}"></image>
+                        </view>
+                        <view class="mineGame-item-title row">
+                            {{item.title ? item.title : "煎饼大师傅"}}
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+    <navigator class="contribute rows" url="./contribute">
+        <view class="contributeL">厂商投稿</view>
+        <view class="contributeR">
+            <image src="../imgs/arrowsR.png"></image>
+        </view>
+    </navigator>
+</view>

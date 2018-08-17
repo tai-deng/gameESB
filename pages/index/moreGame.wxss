@@ -1,0 +1,69 @@
+/* pages/index/moreGame.wxss */
+.container{
+  border-top: 8rpx solid #f2f2f2;
+  padding: 0 15rpx;
+}
+.discover-item{
+  padding: 36rpx 0;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.discover-item-left-icon{
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid #f2f2f2;
+  margin-right: 34rpx;
+}
+.discover-item-left-icon > image {
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  border-radius: 50%;
+}
+.discover-item-left-icon-little{
+  position: absolute;
+  top: -28rpx;
+  left: 0rpx;
+}
+.discover-item-left-icon-little image {
+  width: 39rpx;
+  height: 36rpx;
+  display: block;
+}
+.discover-item-left-describe{}
+.discover-item-left-top{}
+.discover-item-left-title{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width:120px;
+  font-size: 30rpx;
+  color: #353535;
+}
+.discover-item-left-play{
+  font-size: 24rpx;
+  color: #db5a50;
+}
+.discover-item-left-describe-label{
+  margin-top: 25rpx;
+}
+.labels{
+  border-radius: 10rpx;
+  border: 1px solid #f6a471;
+  padding: 0 14rpx;
+  margin-right: 12rpx;
+  color: #f6a471;
+  font-size: 26rpx;
+}
+.discover-item-right{
+  font-size: 26rpx;
+  color: #b2b2b2;
+  align-self: flex-end;
+}
+.discover-item:nth-last-child(1){
+  border: none;
+}
+.discover-item-left-No{
+  font-size: 40rpx;
+  color: #353535;
+  width: 55rpx;
+}

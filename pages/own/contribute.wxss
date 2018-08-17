@@ -1,0 +1,74 @@
+/* pages/own/contribute.wxss */
+.container{
+    padding: 0 45rpx;
+    border-top: 8rpx solid #f2f2f2;
+}
+.contribute-tip{
+    font-size: 23rpx;
+    color: #888888;
+    padding-top: 60rpx;
+}
+.user-import {
+    margin-top: 60rpx;
+    font-size: 29rpx;
+    color: #353535;
+}
+.user-import-v{
+    margin-left: 80rpx;
+}
+.user-import-v > input {
+    font-size: 29rpx;
+    color: #353535;
+    width: 300rpx;
+}
+.inputStyle{
+    font-size: 29rpx;
+    color: #b2b2b2;
+}
+.user-import-upPic{
+    margin: 52rpx 0;
+}
+.user-import-upPic-left{
+    margin-right: 60rpx;
+    width: 141rpx;
+    height: 141rpx;
+}
+.delImg{
+    width: 141rpx;
+    height: 141rpx;
+    position: relative;
+}
+.addImg > image,
+.delImg image:nth-child(1){
+    width: 141rpx;
+    height: 141rpx;
+    display: block;
+}
+.delImg image:nth-child(2){
+    width: 36rpx;
+    height: 36rpx;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: -18rpx;
+    right: -18rpx;
+}
+.user-import-upPic-right{
+    font-size: 23rpx;
+    color: #888888;
+}
+button {
+    width: 679rpx;
+    height: 86rpx;
+    background-color: #d94f44;
+    border-radius: 15rpx;
+    font-size: 30rpx;
+    color:#ffffff;
+    line-height: 86rpx;
+}
+.myRecord{
+    font-size: 30rpx;
+    color: #888888;
+    margin-top: 26rpx;
+    text-decoration:underline;
+}

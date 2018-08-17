@@ -1,0 +1,57 @@
+<!--pages/own/contribute.wxml-->
+<form bindsubmit="onSubmit" report-submit="true">
+<view class="container">
+    <view class="contribute-tip">
+        若你是小游戏开发者，想要推荐你的小游戏给游戏小鹿收录，请提交以下信息，我们会在2个工作日内联系你。
+    </view>
+    <view class="user-import flexrow">
+        <view class="user-import-title">游戏名称:</view>
+        <view class="user-import-v">
+            <input type="text" placeholder="游戏名称" value="{{title}}" placeholder-class="inputStyle" name="title"/>
+        </view>
+    </view>
+    <view class="user-import flexrow">
+        <view class="user-import-title">联系名称:</view>
+        <view class="user-import-v">
+            <input type="text" placeholder="名字" value="{{name}}" placeholder-class="inputStyle" name="name"/>
+        </view>
+    </view>
+    <view class="user-import flexrow">
+        <view class="user-import-title">联系手机:</view>
+        <view class="user-import-v">
+            <input type="number" placeholder="11位手机号码" value="{{phone}}" placeholder-class="inputStyle" name="phone"/>
+        </view>
+    </view>
+    <view class="user-import flexrow">
+        <view class="user-import-title">邮箱信息:</view>
+        <view class="user-import-v">
+            <input type="text" placeholder="邮箱信息" value="{{email}}" placeholder-class="inputStyle" name="email"/>
+        </view>
+    </view>
+    <view class="user-import flexrow">
+        <view class="user-import-title">小游戏码:</view>
+        <view class="user-import-v">
+            <input type="text" placeholder="appId" value="{{appId}}" placeholder-class="inputStyle" name="appId"/>
+        </view>
+    </view>
+    <view class="user-import-upPic flexrow">
+        <view class="user-import-upPic-left">
+            <view wx:if="{{isUpImage}}"class="delImg">
+                <image src="{{isUpImage}}"></image>
+                <image bindtap="onDelImg" src="../imgs/del.png"></image>
+            </view>
+            <view wx:else class="addImg" bindtap="onUploading">
+                <image src="../imgs/add.png"></image>
+            </view>
+        </view>
+        <view class="user-import-upPic-right">
+            <view class="user-import-upPic-right-up">图片质量不低于258像素</view>
+            <view class="user-import-upPic-right-down">格式为PNG/JPG/JPEG，黑色，白色或透明底</view>
+        </view>
+    </view>
+    <button formType="submit" hover-class="none">提交材料</button>
+    <view class="myRecord row"bindtap="onRecord">
+        我的投稿记录
+    </view>
+</view>
+</form>

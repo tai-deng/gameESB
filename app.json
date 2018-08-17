@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/task/task",
+    "pages/own/own",
+    "pages/own/contribute",
+    "pages/index/moreGame"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "游戏小鹿",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#f6a471",
+    "color": "#888888",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "游戏",
+        "iconPath": "pages/imgs/gameb.png",
+        "selectedIconPath": "pages/imgs/gamea.png"
+      },
+      {
+        "pagePath": "pages/task/task",
+        "text": "任务",
+        "iconPath": "pages/imgs/taskb.png",
+        "selectedIconPath": "pages/imgs/taska.png"
+      },
+      {
+        "pagePath": "pages/own/own",
+        "text": "个人",
+        "iconPath": "pages/imgs/ownb.png",
+        "selectedIconPath": "pages/imgs/owna.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+<!--pages/task/task.wxml-->
+<view class="container">
+    <view class="everyDay-sigin">
+        <view class="everyDay-top rows">
+            <view class="everyDay-left">
+                <view class="everyDay-left-title">每日签到</view>
+                <view class="everyDay-left-grand">
+                    已累计签到{{data.grand}}天
+                </view>
+            </view>
+            <view class="everyDay-right row {{data.isSign? 'isSignb':'isSigna'}}"bindtap="onSignIn">
+                {{data.isSign?"已签到":"签到"}}
+            </view>
+        </view>
+        <view class="everyDay-money">
+
+            <veiw class="everyDay-money-top flexrow">
+                <view class="everyDay-money-item-warp row" wx:for="{{signIna}}"wx:key="*this">
+
+                    <view class="everyDay-money-item">
+                        <view class="everyDay-money-item-day row">{{item.day}}天</view>
+                        <view class="everyDay-money-item-money">
+                            <image src="{{item.moneyImg}}"></image>
+                            <view class="everyDay-money-item-money-shade"wx:if="{{item.isNeck}}">
+                                <image src="../imgs/ok.png"></image>
+                            </view>
+                        </view>
+                        <view class="everyDay-money-item-award row">
+                            金币*{{item.award}}
+                        </view>
+                    </view>
+
+                </view>
+            </veiw>
+            
+            <veiw class="everyDay-money-bottom flexrow">
+                <view class="everyDay-money-item-warp row" wx:for="{{signInb}}"wx:key="*this">
+                    <view class="everyDay-money-item">
+                        <view class="everyDay-money-item-day row">{{item.day}}天</view>
+                        <view class="everyDay-money-item-money">
+                            <image src="{{item.moneyImg}}"></image>
+                            <view class="everyDay-money-item-money-shade"wx:if="{{item.isNeck}}">
+                                <image src="../imgs/ok.png"></image>
+                            </view>
+                        </view>
+                        <view class="everyDay-money-item-award row">
+                            金币*{{item.award}}
+                        </view>
+                    </view>
+                </view>
+            </veiw>
+
+            <view class="everyDay-money-tip row">
+                (每天签到送金币，连续签到七天可领取大包金币)
+            </view>
+        </view>
+    </view>
+    <view class="everyDay-task">
+        <view class="everyDay-task-title">日常任务</view>
+        <view class="everyDay-task-item" wx:for="{{tasksInfo}}">
+            <view class="everyDay-task-img">
+                <image src="{{item.taskImg}}"></image>
+            </view>
+            <view class="everyDay-taskInfo">
+                <view class="everyDay-taskInfo-l">
+                    <view class="everyDay-taskInfo-l-top">
+                        <view class="everyDay-taskInfo-l-icon">
+                            <image src="{{item.taskIcon}}"></image>
+                        </view>
+                        <view class="everyDay-taskInfo-l-title">{{item.title}}</view>
+                    </view>
+                    <view class="everyDay-taskInfo-l-b">
+                        {{item.taskMind}}
+                    </view>
+                </view>
+                <view class="everyDay-taskInfo-r column">
+                    <view class="everyDay-taskInfo-r-top">
+                        <view class="everyDay-taskInfo-r-top-statusa row" wx:if="{{item.status == 1}}">
+                            进行中
+                        </view>
+                        <view class="everyDay-taskInfo-r-top-statusb row" wx:if="{{item.status == 2}}"bindtap="onDrawAward">
+                            {{data.award}}金币
+                        </view>
+                        <view class="everyDay-taskInfo-r-top-statusc row" wx:if="{{item.status == 3}}">
+                            已完成
+                        </view>
+                    </view>
+                    <view class="everyDay-taskInfo-r-b">
+                        {{item.finish}}/{{item.target}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

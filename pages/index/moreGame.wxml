@@ -1,0 +1,67 @@
+<!--pages/index/moreGame.wxml-->
+<view class="container">
+    <block wx:for="{{data}}"wx:key="{{index}}">
+        <navigator class="discover-item rows" target="miniProgram" app-id="{{item.appid}}" wx:if="{{item.appid}}" hover-class="none"data-gameId="{{item.gameId}}" bindtap="bindGather">
+            <view class="discover-item-left flexrow">
+                <view class="discover-item-left-No row">
+                    {{index + 1}}
+                </view>
+                <view class="discover-item-left-icon">
+                    <view class="discover-item-left-icon-little">
+                    <image src="../imgs/one.png" wx:if="{{index == 0}}"></image>
+                    <image src="../imgs/two.png" wx:if="{{index == 1}}"></image>
+                    <image src="../imgs/three.png" wx:if="{{index == 2}}"></image>
+                    </view>
+                    <image src="{{item.gameIcon}}"></image>
+                </view>
+                <view class="discover-item-left-describe">
+                    <view class="discover-item-left-top flexrow">
+                    <view class="discover-item-left-title">{{item.title}}</view>
+
+                    <view class="discover-item-left-play">
+                        点击即玩
+                    </view>
+
+                    </view>
+                    <view class="discover-item-left-describe-label flexrow">
+                    <view class="labels" wx:for="{{item.label}}"wx:for-item="it"wx:key="*this">
+                        {{it}}
+                    </view>
+                    </view>
+                </view>
+            </view>
+            <view class="discover-item-right">{{item.date}}</view>
+        </navigator>
+        <view class="discover-item rows" data-qrCode="{{item.qrCode}}" wx:else bindtap="bindQrCode"data-gameId="{{item.gameId}}">
+            <view class="discover-item-left flexrow">
+                <view class="discover-item-left-No row">
+                    {{index + 1}}
+                </view>
+                <view class="discover-item-left-icon">
+                    <view class="discover-item-left-icon-little">
+                        <image src="../imgs/one.png" wx:if="{{index == 0}}"></image>
+                        <image src="../imgs/two.png" wx:if="{{index == 1}}"></image>
+                        <image src="../imgs/three.png" wx:if="{{index == 2}}"></image>
+                    </view>
+                    <image src="{{item.gameIcon}}"></image>
+                    </view>
+                    <view class="discover-item-left-describe">
+                    <view class="discover-item-left-top flexrow">
+                        <view class="discover-item-left-title">{{item.title}}</view>
+
+                        <view class="discover-item-left-play">
+                            点击即玩
+                        </view>
+
+                    </view>
+                    <view class="discover-item-left-describe-label flexrow">
+                        <view class="labels" wx:for="{{item.label}}"wx:for-item="it"wx:key="*this">
+                        {{it}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="discover-item-right">{{item.date}}</view>
+        </view>
+    </block>
+</view>
